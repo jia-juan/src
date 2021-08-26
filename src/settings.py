@@ -25,7 +25,7 @@ SECRET_KEY = '6&5l4gqqp(wo-vv)0p0agztg#g8rv!=x$qk6x&y)_&tzrz&38k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['157.245.49.11', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
+
+    # apps
+    'user',
+    'chat',
+
 ]
 
 MIDDLEWARE = [
@@ -68,6 +74,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'src.wsgi.application'
+
+ASGI_APPLICATION = 'src.routing.application'
 
 
 # Database
