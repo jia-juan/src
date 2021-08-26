@@ -85,11 +85,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ORIGIN_WHITELIST = [
-    'http://157.245.49.11:8000',  # the domain for front-end app(you can add more than 1)
-    'ws://157.245.49.11:8001'
-
-]
+# CORS_ORIGIN_WHITELIST = [
+#     'http://157.245.49.11:8000',  # the domain for front-end app(you can add more than 1)
+#     'ws://157.245.49.11:8001'
+# ]
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
