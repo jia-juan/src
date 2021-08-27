@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'channels',
 
+    # dev
+    'prof',  # profile
+
     # apps
-    'user',
-    'chat',
+    'user',  # ???
+    'chat',  # implement channels(async websocket)
 
 ]
 
@@ -63,7 +66,7 @@ ROOT_URLCONF = 'src.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,13 +128,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Taipei'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -139,6 +142,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/"), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'), ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_collect/")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_collect/')
+
+
+# Channel layers
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],  # todo [dev]
+        },
+    },
+}
