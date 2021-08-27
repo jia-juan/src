@@ -1,0 +1,15 @@
+[Unit]
+Description=daphne daemon
+Requires=daphne.socket
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/src/
+ExecStart=/root/.local/share/virtualenvs/src--xPOFqZi/bin/daphne \
+	  -u /run/daphne.sock \
+	  src.asgi:application
+
+[Install]
+WantedBy=multi-user.target
