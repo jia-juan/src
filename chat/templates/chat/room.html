@@ -14,9 +14,9 @@
 
         const chatSocket = new WebSocket(
             'ws://'
-            + window.location.host
+            + window.location.host  // host
             + '/ws/chat/'
-            + roomName
+            + roomName  // room_name
             + '/'
         );
 
