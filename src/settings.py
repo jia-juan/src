@@ -25,7 +25,7 @@ SECRET_KEY = '6&5l4gqqp(wo-vv)0p0agztg#g8rv!=x$qk6x&y)_&tzrz&38k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['157.245.49.11', '127.0.0.1']
+ALLOWED_HOSTS = ['34.81.99.197', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -158,8 +158,5 @@ MEDIA_URL = '/media/'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels.layers.InMemoryChannelLayer'
-#        'CONFIG': {
-#            "hosts": [('127.0.0.1', 6379)],  # todo [dev]
-        # },
-    },
+    }
 }
